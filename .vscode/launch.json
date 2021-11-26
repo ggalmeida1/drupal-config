@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "log": true,
+      "pathMappings": {
+        "/app/": "${workspaceFolder}/",
+        "/app/drupal/vendor": "${workspaceRoot}/drupal/vendor"
+      }
+    },
+    {
+      "name": "PhpUnit dummy",
+      "type": "php",
+      "request": "launch",
+      "port": 9001,
+    }
+  ],
+  "compounds": [
+    {
+      "name": "PhpUnit",
+      "configurations": [
+        "Listen for XDebug",
+        "PhpUnit dummy"
+      ]
+    }
+  ]
+}
